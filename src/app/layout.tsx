@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import {
+  geist,
+  gtPlanar,
+  gtPlanarItalic15,
+  gtPlanarItalic30,
+  gtPlanarItalic45,
+  gtPlanarRetalic15,
+  gtPlanarRetalic30,
+  gtPlanarRetalic45,
+  jetBrainsMono,
+  tungsten,
+} from "@/lib/fonts";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import clsx from "clsx";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +27,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={clsx([
+          tungsten.variable,
+          jetBrainsMono.variable,
+          gtPlanar.variable,
+          geist.variable,
+          gtPlanarItalic15.variable,
+          gtPlanarItalic30.variable,
+          gtPlanarItalic45.variable,
+          gtPlanarRetalic15.variable,
+          gtPlanarRetalic30.variable,
+          gtPlanarRetalic45.variable,
+        ])}
+      >
+        {children}
+      </body>
     </html>
   );
 }
